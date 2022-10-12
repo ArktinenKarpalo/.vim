@@ -1,1 +1,2 @@
-```git clone --recurse-submodules -j8 https://github.com/ArktinenKarpalo/.vim.git```
+```git clone https://github.com/ArktinenKarpalo/.vim.git```
+``:PlugInstall``

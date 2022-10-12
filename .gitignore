@@ -1,3 +1,4 @@
 !**.keep
 backups/*
 tmp/*
+plugged/

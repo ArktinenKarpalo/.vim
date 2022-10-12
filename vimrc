@@ -1,7 +1,20 @@
-packadd! dracula
+call plug#begin('~/.vim/plugged')
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdtree'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Coc extensions
+Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
+call plug#end()
+
+"packadd! dracula
 syntax enable
-color dracula
+colorscheme dracula
 set nocompatible
+highlight Normal ctermbg=None
 filetype plugin indent on
 
 set autoindent
@@ -23,7 +36,7 @@ set ttimeoutlen=0
 set wildmenu
 set wrap
 set hidden
-set updatetime=1000
+set updatetime=300
 
 " airline theme & fonts
 let g:airline_theme='distinguished'
