@@ -6,9 +6,9 @@ Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Coc extensions
-Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
+let g:coc_global_extensions = ['coc-clangd', 'coc-cmake']
+
 
 "packadd! dracula
 syntax enable
