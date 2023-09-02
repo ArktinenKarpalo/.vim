@@ -1,3 +1,4 @@
+let mapleader = ","
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tpope/vim-fugitive'
@@ -6,9 +7,17 @@ Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'lervag/vimtex'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'mileszs/ack.vim'
+
 call plug#end()
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-cmake', "coc-json"]
+
+
+let g:vimtex_view_method = 'zathura'
+
+let g:coc_global_extensions = ['coc-clangd', 'coc-cmake', "coc-json", "coc-jedi", "coc-tsserver", "coc-go", "coc-angular"]
 
 syntax enable
 colorscheme dracula
@@ -32,16 +41,19 @@ set shiftwidth=4
 set showmatch
 set smartcase
 set tabstop=4
-set ttimeoutlen=0
 set wildmenu
 set wrap
 set hidden
 set updatetime=300
 set mouse=a
+set timeoutlen=1000 ttimeoutlen=0
+
+
 
 map <ScrollWheelUp> 6k
 map <ScrollWheelDown> 6j
 
+nnoremap Y Y
 " -- coc
 let g:coc_user_config = {'inlayHint.enable': 0}
 
@@ -51,6 +63,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: There's always complete item selected by default, you may want to enable
@@ -96,7 +109,12 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+nmap <Leader>rn <Plug>(coc-rename)
+
+" Formatting selected code
+nmap <Leader>f  <Plug>(coc-format-selected)
+xmap <Leader>f  <Plug>(coc-format-selected)
+nmap <Leader>F  <Plug>(coc-format)
 
 
 " -- END coc
@@ -130,3 +148,4 @@ nmap <C-n> :NERDTreeToggle<CR>
 nmap bp :bp<CR>
 nmap bn :bn<CR>
 nmap bc :bp\|bd#<CR>
+
