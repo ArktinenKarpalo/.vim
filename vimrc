@@ -17,7 +17,7 @@ call plug#end()
 
 let g:vimtex_view_method = 'zathura'
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-cmake', "coc-json", "coc-jedi", "coc-tsserver", "coc-go", "coc-angular"]
+let g:coc_global_extensions = ['coc-clangd', 'coc-cmake', "coc-json", "coc-jedi", "coc-tsserver", "coc-go", "coc-angular", "coc-python", "coc-rust-analyzer"]
 
 syntax enable
 colorscheme dracula
