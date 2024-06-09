@@ -17,7 +17,7 @@ call plug#end()
 
 let g:vimtex_view_method = 'zathura'
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-cmake', "coc-json", "coc-jedi", "coc-tsserver", "coc-go", "coc-angular"]
+let g:coc_global_extensions = ['coc-clangd', 'coc-cmake', "coc-json", "coc-jedi", "coc-tsserver", "coc-go", "coc-angular", "coc-css", "coc-html", "coc-python", "coc-java", "coc-rust-analyzer", "coc-yaml"]
 
 syntax enable
 colorscheme dracula
@@ -26,6 +26,7 @@ highlight Normal ctermbg=None
 filetype plugin indent on
 
 set autoindent
+set smartindent
 set backupdir=$HOME/.vim/backups
 set cursorline
 set directory=$HOME/.vim/tmp
